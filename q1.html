@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello World Button</title>
+</head>
+<body>
+
+    <h2 id="message">Click the button to see a message</h2>
+
+    <button onclick="showMessage()">Click Me</button>
+
+    <script>
+        // Function declaration
+        function showMessage() {
+            // Variable using var
+            var text = "Hello, world!<br>Samarth Bhatnagar<br>Registration No: 24BCI0082";
+
+            // DOM access using getElementById and changing using outerHTML
+            document.getElementById("message").outerHTML = "<h2>" + text + "</h2>";
+        }
+    </script>
+
+</body>
+</html>

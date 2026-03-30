@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiplication Table (Do-While Loop)</title>
+</head>
+<body>
+
+    <h2>
+        Name: Samarth Bhatnagar <br>
+        Registration No: 24BCI0082
+    </h2>
+
+    <h3>Multiplication Table Generator</h3>
+
+    Enter Number: <input type="text" id="num"><br><br>
+
+    <button onclick="printTable()">Generate Table</button>
+
+    <p id="output"></p>
+
+    <script>
+        function printTable() {
+
+            // Taking input from user
+            var number = parseInt(document.getElementById("num").value);
+
+            var i = 1;
+            var result = "";
+
+            // Do-while loop (executes at least once)
+            do {
+                result = result + number + " x " + i + " = " + (number * i) + "<br>";
+                i++;
+            } while (i <= 10);
+
+            // Display output
+            document.getElementById("output").innerHTML = result;
+        }
+    </script>
+
+</body>
+</html>

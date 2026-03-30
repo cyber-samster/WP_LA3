@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Generator</title>
+</head>
+<body>
+
+    <h2>
+        Name: Samarth Bhatnagar <br>
+        Registration No: 24BCI0082
+    </h2>
+
+    <h3>Email Address Generator</h3>
+
+    <form id="myForm">
+        First Name: <input type="text" name="fname"><br><br>
+        Last Name: <input type="text" name="lname"><br><br>
+
+        <button type="button" onclick="generateEmail(this.form)">
+            Generate Email
+        </button>
+    </form>
+
+    <h3 id="result"></h3>
+
+    <script>
+        function generateEmail(form) {
+            // Access form elements
+            var firstName = form.elements["fname"].value;
+            var lastName = form.elements["lname"].value;
+
+            // String concatenation
+            var email = firstName + "." + lastName + "@park.edu";
+
+            // Display using innerHTML
+            document.getElementById("result").innerHTML = "Generated Email: " + email;
+
+            // Reset form
+            form.reset();
+
+            // Set focus back to first name field
+            form.elements["fname"].focus();
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Styling App</title>
+    <style>
+        .italic {
+            font-style: italic;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .smallcaps {
+            font-variant: small-caps;
+        }
+
+        #text {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        .info {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Text Styling Application</h2>
+
+    <div class="info">
+        Name: Samarth Bhatnagar <br>
+        Registration Number: 24BCI0082
+    </div>
+
+    <fieldset>
+        <legend>Choose Styles</legend>
+
+        <button onclick="applyStyle('italic')">Italic</button>
+        <button onclick="applyStyle('bold')">Bold</button>
+        <button onclick="applyStyle('smallcaps')">Small Caps</button>
+        <button onclick="clearStyle()">Clear</button>
+    </fieldset>
+
+    <p id="text">This is a sample text</p>
+
+    <script>
+        function applyStyle(style) {
+            let text = document.getElementById("text");
+            text.classList.add(style); // multiple class assignment
+        }
+
+        function clearStyle() {
+            let text = document.getElementById("text");
+            text.className = ""; // reset using className
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkbox Selection Counter</title>
+</head>
+<body>
+
+    <h2>
+        Name: Samarth Bhatnagar <br>
+        Registration No: 24BCI0082
+    </h2>
+
+    <h3>Select Subjects</h3>
+
+    <!-- Checkboxes -->
+    <input type="checkbox" name="subject" value="Maths"> Maths <br>
+    <input type="checkbox" name="subject" value="Physics"> Physics <br>
+    <input type="checkbox" name="subject" value="Chemistry"> Chemistry <br>
+    <input type="checkbox" name="subject" value="Computer Science"> Computer Science <br><br>
+
+    <button onclick="countSubjects()">Count Selected</button>
+
+    <p id="output"></p>
+
+    <script>
+        function countSubjects() {
+
+            // Access all checkboxes
+            var subjects = document.getElementsByName("subject");
+
+            var selectedSubjects = []; // array to store values
+            var count = 0; // counter variable
+
+            // Loop through checkboxes
+            for (var i = 0; i < subjects.length; i++) {
+
+                if (subjects[i].checked) {
+                    count++; // increment count
+                    selectedSubjects.push(subjects[i].value); // add to array
+                }
+            }
+
+            // Convert array to string
+            var resultList = selectedSubjects.join(", ");
+
+            // Display output
+            document.getElementById("output").innerHTML =
+                "Selected Subjects: " + resultList + "<br>" +
+                "Total Selected: " + count;
+        }
+    </script>
+
+</body>
+</html>

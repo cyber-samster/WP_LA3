@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Font Customization Tool</title>
+    <style>
+        #text {
+            font-size: 20px;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid black;
+        }
+
+        .info {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Dynamic Font Customization Tool</h2>
+
+    <div class="info">
+        Name: Samarth Bhatnagar <br>
+        Registration Number: 24BCI0082
+    </div>
+
+    <fieldset>
+        <legend>Customize Font</legend>
+
+        <!-- Font Size -->
+        <label>Font Size:</label>
+        <input type="range" min="10" max="50" value="20" 
+               oninput="changeFontSize(this.value)">
+        <br><br>
+
+        <!-- Text Color -->
+        <label>Text Color:</label>
+        <input type="color" onchange="changeTextColor(this.value)">
+        <br><br>
+
+        <!-- Background Color -->
+        <label>Background Color:</label>
+        <input type="color" onchange="changeBgColor(this.value)">
+    </fieldset>
+
+    <p id="text">This is a customizable text</p>
+
+    <script>
+        function changeFontSize(size) {
+            document.getElementById("text").style.fontSize = size + "px";
+        }
+
+        function changeTextColor(color) {
+            document.getElementById("text").style.color = color;
+        }
+
+        function changeBgColor(color) {
+            document.getElementById("text").style.backgroundColor = color;
+        }
+    </script>
+
+</body>
+</html>

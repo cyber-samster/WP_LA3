@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Radio Button Selection</title>
+</head>
+<body>
+
+    <h2>
+        Name: Samarth Bhatnagar <br>
+        Registration No: 24BCI0082
+    </h2>
+
+    <h3>Select a Color</h3>
+
+    <!-- Radio buttons (same name for grouping) -->
+    <input type="radio" name="color" value="Red"> Red <br>
+    <input type="radio" name="color" value="Green"> Green <br>
+    <input type="radio" name="color" value="Blue"> Blue <br><br>
+
+    <button onclick="showColor()">Show Selected Color</button>
+
+    <p id="output"></p>
+
+    <script>
+        function showColor() {
+
+            // Access collection by name
+            var colors = document.getElementsByName("color");
+
+            var selectedColor = "";
+
+            // Loop through radio buttons
+            for (var i = 0; i < colors.length; i++) {
+
+                // Check which one is selected
+                if (colors[i].checked) {
+                    selectedColor = colors[i].value;
+                    break;
+                }
+            }
+
+            // Display result
+            if (selectedColor === "") {
+                document.getElementById("output").innerHTML = "No color selected!";
+            } else {
+                document.getElementById("output").innerHTML = "Selected Color: " + selectedColor;
+            }
+        }
+    </script>
+
+</body>
+</html>

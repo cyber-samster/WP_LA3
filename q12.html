@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Skills Form</title>
+</head>
+<body>
+
+    <h2>
+        Name: Samarth Bhatnagar <br>
+        Registration No: 24BCI0082
+    </h2>
+
+    <h3>Select Your Job Skills (Select at least 3)</h3>
+
+    <form id="skillForm">
+
+        <input type="checkbox" name="skills" value="HTML"> HTML <br>
+        <input type="checkbox" name="skills" value="CSS"> CSS <br>
+        <input type="checkbox" name="skills" value="JavaScript"> JavaScript <br>
+        <input type="checkbox" name="skills" value="Python"> Python <br>
+        <input type="checkbox" name="skills" value="C++"> C++ <br><br>
+
+        <button type="button" onclick="validateSkills()">Submit</button>
+
+    </form>
+
+    <p id="output"></p>
+
+    <script>
+        function validateSkills() {
+
+            var skillElements = document.getElementsByName("skills");
+
+            var selectedSkills = [];
+            var count = 0;
+
+            // for loop with index
+            for (var i = 0; i < skillElements.length; i++) {
+
+                if (skillElements[i].checked) {
+                    count++;
+                    selectedSkills.push(skillElements[i].value);
+                }
+            }
+
+            // Validation: at least 3 skills
+            if (selectedSkills.length < 3) {
+                document.getElementById("output").innerHTML =
+                    "Error: Please select at least 3 skills.";
+                return;
+            }
+
+            // Using checkValidity (basic form validation)
+            if (!document.getElementById("skillForm").checkValidity()) {
+                document.getElementById("output").innerHTML =
+                    "Form is not valid.";
+                return;
+            }
+
+            // String concatenation to display result
+            var result = "Selected Skills: " + selectedSkills.join(", ");
+
+            document.getElementById("output").innerHTML = result;
+        }
+    </script>
+
+</body>
+</html>

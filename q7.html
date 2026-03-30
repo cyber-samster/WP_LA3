@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Print Numbers using While Loop</title>
+</head>
+<body>
+
+    <h2>
+        Name: Samarth Bhatnagar <br>
+        Registration No: 24BCI0082
+    </h2>
+
+    <h3>Print Numbers from 1 to N</h3>
+
+    Enter N: <input type="text" id="num"><br><br>
+
+    <button onclick="printNumbers()">Print</button>
+
+    <p id="output"></p>
+
+    <script>
+        function printNumbers() {
+
+            // Taking input from user
+            var n = parseInt(document.getElementById("num").value);
+
+            // Counter initialization
+            var i = 1;
+
+            var result = "";
+
+            // While loop execution
+            while (i <= n) {
+                result = result + i + " ";
+                i++; // increment
+            }
+
+            // Display output
+            document.getElementById("output").innerHTML = result;
+        }
+    </script>
+
+</body>
+</html>

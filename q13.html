@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Order Form</title>
+    <style>
+        body {
+            font-family: Arial;
+        }
+        fieldset {
+            margin-bottom: 15px;
+            padding: 10px;
+        }
+        legend {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>
+        Name: Samarth Bhatnagar <br>
+        Registration No: 24BCI0082
+    </h2>
+
+    <h3>Product Order Form</h3>
+
+    <form id="orderForm">
+
+        <!-- Electronics -->
+        <fieldset>
+            <legend>Electronics</legend>
+            <input type="checkbox" name="product" value="50000"> Laptop (₹50000)<br>
+            <input type="checkbox" name="product" value="20000"> Tablet (₹20000)<br>
+        </fieldset>
+
+        <!-- Accessories -->
+        <fieldset>
+            <legend>Accessories</legend>
+            <input type="checkbox" name="product" value="2000"> Headphones (₹2000)<br>
+            <input type="checkbox" name="product" value="1000"> Mouse (₹1000)<br>
+        </fieldset>
+
+        <!-- Clothing -->
+        <fieldset>
+            <legend>Clothing</legend>
+            <input type="checkbox" name="product" value="1500"> T-Shirt (₹1500)<br>
+            <input type="checkbox" name="product" value="2500"> Jacket (₹2500)<br>
+        </fieldset>
+
+        <button type="button" onclick="calculateTotal()">Calculate Total</button>
+
+    </form>
+
+    <p id="output"></p>
+
+    <script>
+        function calculateTotal() {
+
+            var items = document.getElementsByName("product");
+            var total = 0;
+
+            // Modern for...of loop
+            for (var item of items) {
+                if (item.checked) {
+                    total += parseFloat(item.value);
+                }
+            }
+
+            document.getElementById("output").innerHTML =
+                "Total Price: ₹" + total;
+        }
+    </script>
+
+</body>
+</html>
